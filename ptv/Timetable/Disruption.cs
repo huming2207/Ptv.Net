@@ -10,6 +10,9 @@ namespace Ptv.Timetable
     [JsonObject()]
     public class Disruption : Item
     {
+        // TO-DO: THESE STUFF BELOW DOESN'T WORK AT ALL
+        // COMPLETELY WRONG, SILLY ME...
+        // NEED TO BE FIXED BY WRITING ANOTHER "ItemConverter"
         [JsonProperty(PropertyName = "title")]
         public string Title { get; set; }
 

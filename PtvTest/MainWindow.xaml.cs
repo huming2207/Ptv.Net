@@ -52,11 +52,43 @@ namespace PtvTest
             );
 
             var checkHealthResult = await client.GetHealthAsync();
+
             serverDatabaseCheckResultTextBlock.Text = "Server Database Check: " + checkHealthResult.IsClientClockOK.ToString();
             timeSyncCheckResultTextBlock.Text = "Time Sync Check: " + checkHealthResult.IsClientClockOK.ToString();
             memcacheCheckResultTextBlock.Text = "Server Memcache Check: " + checkHealthResult.IsMemcacheOK.ToString();
             securityChecksumResultTextBlock.Text = "Security checksum Check: " + checkHealthResult.IsSecurityTokenOK.ToString();
-            conclusionTextBlock.Text = "Conclusion: " + checkHealthResult.IsOK.ToString();
+
+            if(checkHealthResult.IsOK)
+            {
+                conclusionTextBlock.Text = "Conclusion: All Good!";
+            }
+            else
+            {
+                conclusionTextBlock.Text = "Conclusion: Something wrong!";
+            }
+        }
+
+        private async void getDisruptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            var client = new TimetableClient(
+                 ApiId,
+                 ApiKey,
+                (input, key) =>
+                {
+                    var provider = new HMACSHA1(key);
+                    var hash = provider.ComputeHash(input);
+                    return hash;
+                }
+            );
+
+            // ComboBox in WPF is different from WinForm, so we need to use it in this way,
+            // NOT simply using "ComboBox.SelectedItem.ToString()"
+            ComboBoxItem selectedItem = (ComboBoxItem)disruptionModeSelectionComboBox.SelectedItem;
+            var disruptionResult = await client.GetDisruptionAsync(selectedItem.Content.ToString());
+            disruptionResultTextBox.AppendText("Title: " + disruptionResult.Title);
+            disruptionResultTextBox.AppendText("\r\nDescription: " + disruptionResult.Description);
+            disruptionResultTextBox.AppendText("\r\nLink: " + disruptionResult.MessageURL);
+            disruptionResultTextBox.AppendText("\r\nPublish time: " + disruptionResult.PublishTime.ToString());
         }
     }
 }

@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Diagnostics;
 using System.Threading.Tasks;
 
 namespace Ptv.Timetable
@@ -21,7 +22,7 @@ namespace Ptv.Timetable
         private const string GetSpecificNextDeparturesPathAndQueryFormat = "/v2/mode/{0}/line/{1}/stop/{2}/directionid/{3}/departures/all/limit/{4}?for_utc={5}&";
         private const string GetStoppingPatternPathAndQueryFormat = "/v2/mode/{0}/run/{1}/stop/{2}/stopping-pattern?for_utc={3}&";
         private const string GetLineStopsPathAndQueryFormat = "/v2/mode/{0}/line/{1}/stops-for-line?";
-        private const string GetDistruptionAndQueryFormat = "";
+        private const string GetDistruptionAndQueryFormat = "/v2/disruptions/modes/{0}?";
         private const string DeveloperIDFormat = "{0}devid={1}";
         private const string SignatureFormat = "{0}&signature={1}";
         
@@ -82,7 +83,8 @@ namespace Ptv.Timetable
         {
             var pathAndQueryWithDeveloperID = this.ApplyDeveloperID(pathAndQuery);
             var pathAndQueryWithDeveloperIDAndSignature = this.ApplySignature(pathAndQueryWithDeveloperID);
-
+            Debug.WriteLine("HTTP ADDR:" + pathAndQueryWithDeveloperIDAndSignature);
+            
             using (var client = this.GetHttpClient())
             {
                 var json = await client.GetStringAsync(pathAndQueryWithDeveloperIDAndSignature);

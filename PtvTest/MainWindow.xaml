@@ -41,7 +41,20 @@
             </TabItem>
 
             <TabItem Header="Disruptions">
-                <Grid Background="#FFFFFFFF"/>
+                <Grid Background="#FFFFFFFF">
+                    <ComboBox x:Name="disruptionModeSelectionComboBox" HorizontalAlignment="Left" Margin="174,59,0,0" VerticalAlignment="Top" Width="120">
+                        <ComboBoxItem Content="metro-train" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="metro-bus" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="metro-tram" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="regional-train" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="regional-coach" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="regional-bus" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="general" HorizontalAlignment="Left" Width="118"/>
+                    </ComboBox>
+                    <TextBlock x:Name="disruptionTypeTextBlock" HorizontalAlignment="Left" Margin="84,60,0,0" TextWrapping="Wrap" Text="Select a type:" VerticalAlignment="Top"/>
+                    <Button x:Name="getDisruptionButton" Content="Go!" HorizontalAlignment="Left" Margin="322,56,0,0" VerticalAlignment="Top" Width="96" Height="27" Click="getDisruptionButton_Click"/>
+                    <TextBox x:Name="disruptionResultTextBox" HorizontalAlignment="Left" Height="394" Margin="17,106,0,0" TextWrapping="Wrap" Text="Waiting for you..." VerticalAlignment="Top" Width="649"/>
+                </Grid>
             </TabItem>
         </TabControl>
 
