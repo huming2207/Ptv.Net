@@ -76,29 +76,6 @@ namespace Ptv.Timetable
                     Json = disruptionWrapper.ToString()
                 };
             }
-
-            /*
-            if (disruptionMessage.Property("metro-train") != null       || 
-                disruptionMessage.Property("metro-bus") != null         || 
-                disruptionMessage.Property("regional-bus") != null      || 
-                disruptionMessage.Property("regional-train") != null    || 
-                disruptionMessage.Property("regional-bus") != null      || 
-                disruptionMessage.Property("regional-coach") != null    || 
-                disruptionMessage.Property("metro-tram") != null        || 
-                disruptionMessage.Property("general") != null)
-            {
-                var disruptionCollection = disruptionMessage.ToObject<Disruption>();
-                return disruptionCollection;
-            }
-            else
-            {
-                throw new TimetableException(Resources.UnexpectedResponseFromServerDetectedTimetableExceptionMessage)
-                {
-                    Json = disruptionMessage.ToString()
-                };
-            } */
-
-
         }
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
