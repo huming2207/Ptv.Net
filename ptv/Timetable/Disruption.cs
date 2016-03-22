@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace Ptv.Timetable
 {
     [JsonObject()]
-    public abstract class Disruption : Item
+    public class Disruption : Item
     {
         // TO-DO: THESE STUFF BELOW DOESN'T WORK AT ALL
         // COMPLETELY WRONG, SILLY ME...
@@ -31,10 +31,10 @@ namespace Ptv.Timetable
         [JsonProperty(PropertyName = "publishedOn")]
         public DateTime PublishTime { get; set; }
 
-        [JsonProperty(PropertyName = "fromDate")]
-        public DateTime StartDate { get; set; }
+     //   [JsonProperty(PropertyName = "fromDate")]
+      //  public DateTime StartDate { get; set; }
 
-        [JsonProperty(PropertyName = "toDate")]
-        public DateTime EndDate { get; set; }
+      //  [JsonProperty(PropertyName = "toDate")]
+       // public DateTime EndDate { get; set; }
     }
 }

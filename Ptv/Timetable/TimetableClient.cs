@@ -200,10 +200,10 @@ namespace Ptv.Timetable
             return result;
         }
 
-        public async Task<Disruption> GetDisruptionAsync(string mode)
+        public async Task<Disruption[]> GetDisruptionAsync(string mode)
         {
             var pathAndQuery = string.Format(TimetableClient.GetDistruptionAndQueryFormat, mode);
-            var result = await this.ExecuteAsync<Disruption>(pathAndQuery);
+            var result = await this.ExecuteAsync<Disruption[]>(pathAndQuery);
             return result;
         }
     }

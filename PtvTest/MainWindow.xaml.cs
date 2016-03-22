@@ -85,10 +85,15 @@ namespace PtvTest
             // NOT simply using "ComboBox.SelectedItem.ToString()"
             ComboBoxItem selectedItem = (ComboBoxItem)disruptionModeSelectionComboBox.SelectedItem;
             var disruptionResult = await client.GetDisruptionAsync(selectedItem.Content.ToString());
-            disruptionResultTextBox.AppendText("Title: " + disruptionResult.Title);
-            disruptionResultTextBox.AppendText("\r\nDescription: " + disruptionResult.Description);
-            disruptionResultTextBox.AppendText("\r\nLink: " + disruptionResult.MessageURL);
-            disruptionResultTextBox.AppendText("\r\nPublish time: " + disruptionResult.PublishTime.ToString());
+            for(int i=0; i<disruptionResult.Length; i++)
+            {
+                disruptionResultTextBox.AppendText("\r\n\r\nTitle: " + disruptionResult[i].Title);
+                disruptionResultTextBox.AppendText("\r\nDisruption ID: " + disruptionResult[i].DisruptionId.ToString());
+                disruptionResultTextBox.AppendText("\r\nDescription: " + disruptionResult[i].Description);
+                disruptionResultTextBox.AppendText("\r\nLink: " + disruptionResult[i].MessageURL);
+                disruptionResultTextBox.AppendText("\r\nPublish time: " + disruptionResult[i].PublishTime.ToString());
+            }
+            
         }
     }
 }
