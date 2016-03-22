@@ -44,6 +44,7 @@
     <Compile Include="Timetable\DepartureFlagsConverter.cs" />
     <Compile Include="Timetable\Direction.cs" />
     <Compile Include="Timetable\Disruption.cs" />
+    <Compile Include="Timetable\DisruptionConverter.cs" />
     <Compile Include="Timetable\Health.cs" />
     <Compile Include="Timetable\TimetableClientHasher.cs" />
     <Compile Include="Timetable\Item.cs" />

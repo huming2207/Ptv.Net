@@ -83,7 +83,7 @@ namespace Ptv.Timetable
         {
             var pathAndQueryWithDeveloperID = this.ApplyDeveloperID(pathAndQuery);
             var pathAndQueryWithDeveloperIDAndSignature = this.ApplySignature(pathAndQueryWithDeveloperID);
-            Debug.WriteLine("HTTP ADDR:" + pathAndQueryWithDeveloperIDAndSignature);
+            Debug.WriteLine("REQUEST HTTP ADDR: " + BaseUrl + pathAndQueryWithDeveloperIDAndSignature);
             
             using (var client = this.GetHttpClient())
             {
@@ -92,7 +92,8 @@ namespace Ptv.Timetable
                     json,
                     new DepartureConverter(),
                     new ItemConverter(),
-                    new LocationConverter()
+                    new LocationConverter(),
+                    new DisruptionConverter()
                     );
 
                 return result;
