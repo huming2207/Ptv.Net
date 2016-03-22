@@ -27,7 +27,14 @@ namespace Ptv.Timetable
         {
             var disruptionMessage = JObject.Load(reader);
 
-            if (disruptionMessage.Property("metro-train") != null && disruptionMessage.Property("metro-bus") != null && disruptionMessage.Property("regional-bus") != null && disruptionMessage.Property("regional-train") != null && disruptionMessage.Property("regional-bus") != null && disruptionMessage.Property("regional-coach") != null && disruptionMessage.Property("metro-tram") != null && disruptionMessage.Property("general") != null)
+            if (disruptionMessage.Property("metro-train") != null || 
+                disruptionMessage.Property("metro-bus") != null || 
+                disruptionMessage.Property("regional-bus") != null || 
+                disruptionMessage.Property("regional-train") != null || 
+                disruptionMessage.Property("regional-bus") != null || 
+                disruptionMessage.Property("regional-coach") != null || 
+                disruptionMessage.Property("metro-tram") != null || 
+                disruptionMessage.Property("general") != null)
             {
                 var disruptionCollection = disruptionMessage.ToObject<Disruption>();
                 return disruptionCollection;
