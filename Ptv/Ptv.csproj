@@ -46,6 +46,8 @@
     <Compile Include="Timetable\Disruption.cs" />
     <Compile Include="Timetable\DisruptionConverter.cs" />
     <Compile Include="Timetable\Health.cs" />
+    <Compile Include="Timetable\LineByMode.cs" />
+    <Compile Include="Timetable\LineByModeConverter.cs" />
     <Compile Include="Timetable\TimetableClientHasher.cs" />
     <Compile Include="Timetable\Item.cs" />
     <Compile Include="Timetable\LocationConverter.cs" />

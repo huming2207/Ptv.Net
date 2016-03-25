@@ -24,11 +24,26 @@
                     <TextBlock x:Name="serverDatabaseCheckResultTextBlock" HorizontalAlignment="Left" Margin="122,349,0,0" TextWrapping="Wrap" Text="Server Database Check:  Unknown" VerticalAlignment="Top"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Lines by Mode">
-                <Grid Background="#FFFFFFFF"/>
+            <TabItem Header="Search All">
+                <Grid Background="#FFFFFFFF">
+                    <Button x:Name="searchButton" Content="Search it" HorizontalAlignment="Left" Height="28" Margin="135,51,0,0" VerticalAlignment="Top" Width="412" Click="searchButton_Click"/>
+                    <TextBox x:Name="searchTextBox" HorizontalAlignment="Left" Height="25" Margin="135,21,0,0" TextWrapping="Wrap" Text="Input a station place..." VerticalAlignment="Top" Width="412" FontSize="13.333"/>
+                    <TextBox x:Name="searchResultTextBox" HorizontalAlignment="Left" Height="390" Margin="18,96,0,0" TextWrapping="Wrap" Text="Waiting for you..." VerticalAlignment="Top" Width="644"/>
+                </Grid>
             </TabItem>
-            <TabItem Header="Search">
-                <Grid Background="#FFFFFFFF"/>
+            <TabItem Header="Search Line by Mode">
+                <Grid Background="#FFFFFFFF">
+                    <Button x:Name="searchLineByModeButton" Content="Search it" HorizontalAlignment="Left" Height="28" Margin="135,51,0,0" VerticalAlignment="Top" Width="412" Click="searchLineByModeButton_Click"/>
+                    <TextBox x:Name="searchLineByModeTextBox" HorizontalAlignment="Left" Height="25" Margin="135,21,0,0" TextWrapping="Wrap" Text="Input a station place..." VerticalAlignment="Top" Width="281" FontSize="13.333"/>
+                    <TextBox x:Name="searchLineByModeResultTextBox" HorizontalAlignment="Left" Height="390" Margin="18,96,0,0" TextWrapping="Wrap" Text="Waiting for you..." VerticalAlignment="Top" Width="644"/>
+                    <ComboBox x:Name="searchLineByModeResultComboBox" HorizontalAlignment="Left" Margin="422,21,0,0" VerticalAlignment="Top" Width="124" Height="25">
+                        <ComboBoxItem Content="Train" HorizontalAlignment="Left" Width="122"/>
+                        <ComboBoxItem Content="Tram" HorizontalAlignment="Left" Width="122"/>
+                        <ComboBoxItem Content="Bus" HorizontalAlignment="Left" Width="122"/>
+                        <ComboBoxItem Content="V/Line Service" HorizontalAlignment="Left" Width="122"/>
+                        <ComboBoxItem Content="Night Rider" HorizontalAlignment="Left" Width="122"/>
+                    </ComboBox>
+                </Grid>
             </TabItem>
             <TabItem Header="Stop on a line">
                 <Grid Background="#FFFFFFFF"/>

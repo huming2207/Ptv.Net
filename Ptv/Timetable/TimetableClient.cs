@@ -17,7 +17,7 @@ namespace Ptv.Timetable
         private const string GetNearbyPathAndQueryFormat = "/v2/nearme/latitude/{0}/longitude/{1}?";
         private const string GetPointsOfInterestPathAndQueryFormat = "/v2/poi/{0}/lat1/{1}/long1/{2}/lat2/{3}/long2/{4}/griddepth/{5}/limit/{6}?";
         private const string SearchPathAndQueryFormat = "/v2/search/{0}?";
-        private const string SearchLineByModeAndQueryFormat = "/v2/lines/mode/{0}?name={1}";
+        private const string SearchLineByModeAndQueryFormat = "/v2/lines/mode/{0}?name={1}&";
         private const string GetBroadNextDeparturesPathAndQueryFormat = "/v2/mode/{0}/stop/{1}/departures/by-destination/limit/{2}?";
         private const string GetSpecificNextDeparturesPathAndQueryFormat = "/v2/mode/{0}/line/{1}/stop/{2}/directionid/{3}/departures/all/limit/{4}?for_utc={5}&";
         private const string GetStoppingPatternPathAndQueryFormat = "/v2/mode/{0}/run/{1}/stop/{2}/stopping-pattern?for_utc={3}&";
@@ -93,7 +93,8 @@ namespace Ptv.Timetable
                     new DepartureConverter(),
                     new ItemConverter(),
                     new LocationConverter(),
-                    new DisruptionConverter()
+                    new DisruptionConverter(),
+                    new LineByModeConverter()
                     );
 
                 return result;
@@ -192,11 +193,11 @@ namespace Ptv.Timetable
             return result;
         }
 
-        public async Task<Item[]> SearchLineByModeAsync(TransportType mode, string keyword)
+        public async Task<LineByMode[]> SearchLineByModeAsync(string keyword, TransportType mode)
         {
             var encodedKeyword = Uri.EscapeDataString(keyword);
-            var pathAndQuery = string.Format(TimetableClient.SearchPathAndQueryFormat, (uint)mode, encodedKeyword);
-            var result = await this.ExecuteAsync<Item[]>(pathAndQuery);
+            var pathAndQuery = string.Format(TimetableClient.SearchLineByModeAndQueryFormat, (uint)mode, encodedKeyword);
+            var result = await this.ExecuteAsync<LineByMode[]>(pathAndQuery);
             return result;
         }
 

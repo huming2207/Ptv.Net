@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Diagnostics;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -94,6 +95,70 @@ namespace PtvTest
                 disruptionResultTextBox.AppendText("\r\nPublish time: " + disruptionResult[i].PublishTime.ToString());
             }
             
+        }
+
+        private async void searchButton_Click(object sender, RoutedEventArgs e)
+        {
+ 
+            var client = new TimetableClient(
+                ApiId,
+                ApiKey,
+                (input, key) =>
+            {
+                var provider = new HMACSHA1(key);
+                var hash = provider.ComputeHash(input);
+                return hash;
+            }
+            );
+
+            var itemResult = await client.SearchAsync(searchTextBox.Text);
+
+            for (int i = 0; i < itemResult.Length; i++)
+            {
+                if(itemResult[i].GetType() == typeof(Ptv.Timetable.Line))
+                {
+                    Ptv.Timetable.Line result = new Ptv.Timetable.Line();
+                    result = (Ptv.Timetable.Line)itemResult[i];
+                    searchResultTextBox.AppendText("\r\n\r\nName: " + result.LineName);
+                    searchResultTextBox.AppendText("\r\nLine ID: " + result.LineID);
+                    searchResultTextBox.AppendText("\r\nLine Number: " + result.LineNumber);
+                    searchResultTextBox.AppendText("\r\nType: " + result.TransportType);
+                }
+                else
+                {
+                    Stop result = new Stop();
+                    result = (Stop)itemResult[i];
+                    searchResultTextBox.AppendText("\r\n\r\nStop Location Name: " + result.LocationName);
+                    searchResultTextBox.AppendText("\r\nStop ID: " + result.StopID);
+                    searchResultTextBox.AppendText("\r\nStop Surburb: " + result.Suburb);
+                    searchResultTextBox.AppendText("\r\nType: " + result.TransportType);
+                }
+            }
+            
+        }
+
+        private async void searchLineByModeButton_Click(object sender, RoutedEventArgs e)
+        {
+            var client = new TimetableClient(
+                ApiId,
+                ApiKey,
+                (input, key) =>
+                {
+                    var provider = new HMACSHA1(key);
+                    var hash = provider.ComputeHash(input);
+                    return hash;
+                }
+            );
+
+            var itemResult = await client.SearchLineByModeAsync(searchLineByModeTextBox.Text, (TransportType)searchLineByModeResultComboBox.SelectedIndex);
+
+            for (int i = 0; i < itemResult.Length; i++)
+            {
+                searchLineByModeResultTextBox.AppendText("\r\n\r\nName: " + itemResult[i].LineName);
+                searchLineByModeResultTextBox.AppendText("\r\nLine ID: " + itemResult[i].LineID);
+                searchLineByModeResultTextBox.AppendText("\r\nLine Number: " + itemResult[i].LineNumber);
+                searchLineByModeResultTextBox.AppendText("\r\nType: " + itemResult[i].TransportType);
+            }
         }
     }
 }

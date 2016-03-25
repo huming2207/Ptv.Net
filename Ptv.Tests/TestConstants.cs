@@ -8,7 +8,7 @@ namespace Ptv.Tests
 {
     public class TestConstants
     {
-        public const string TimetableDeveloperID = "12345";
-        public const string TimetableSecurityKey = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
+        public const string TimetableDeveloperID = "1000000";
+        public const string TimetableSecurityKey = "";
     }
 }
