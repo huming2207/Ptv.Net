@@ -29,10 +29,6 @@ namespace Ptv.Timetable
         {
             var arrayWrapper = JArray.Load(reader);
             var lines = arrayWrapper.ToObject<LineByMode[]>();
-
-           // var lineWrapper = JObject.Load(reader);
-           // var result = lineWrapper[null];
-           // var lines = result.ToObject<Line[]>();
             return lines;
         }
 
