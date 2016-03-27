@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ptv", "ptv\Ptv.csproj", "{BDF370A0-1AD4-4F8D-96C7-0516894014EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ptv", "Ptv\Ptv.csproj", "{BDF370A0-1AD4-4F8D-96C7-0516894014EE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ptv.Tests", "Ptv.Tests\Ptv.Tests.csproj", "{337DA0E8-FF7A-4BD1-8FB0-A6AFF6AFB5C0}"
 EndProject
