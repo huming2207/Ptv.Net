@@ -1,2 +1,2 @@
 language: csharp
-solution: Ptv.sln
+solution: Ptv-TravisTest.sln
