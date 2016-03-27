@@ -10,7 +10,10 @@ Ptv is a Portable Class Library which provides .NET-based wrapper around the Pub
 Usage
 -----
 
-In your code add the following:
+Firstly, open **Ptv.sln** (NOT THE ONE CALLED **Ptv-TravisTest.sln**) to compile the PCL library, 
+or have a try with the WPF demo app.
+
+Then, in your code add the following:
 
 ```C#
 var developerID = "12345";
