@@ -40,6 +40,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Timetable\CompressionType.cs" />
     <Compile Include="Timetable\DepartureFlags.cs" />
     <Compile Include="Timetable\DepartureFlagsConverter.cs" />
     <Compile Include="Timetable\Direction.cs" />
