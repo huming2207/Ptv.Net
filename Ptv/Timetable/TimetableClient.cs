@@ -7,6 +7,8 @@ using System.Net.Http;
 using System.Text;
 using System.Diagnostics;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http.Headers;
 
 namespace Ptv.Timetable
 {
@@ -26,16 +28,18 @@ namespace Ptv.Timetable
         private const string DeveloperIDFormat = "{0}devid={1}";
         private const string SignatureFormat = "{0}&signature={1}";
         
-        public TimetableClient(string developerID, string securityKey, TimetableClientHasher hasher)
+        public TimetableClient(string developerID, string securityKey, TimetableClientHasher hasher, CompressionType type = CompressionType.GZip)
         {
             this.DeveloperID = developerID;
             this.SecurityKey = securityKey;
             this.Hasher = hasher;
+            this.CompressType = type;
         }
 
         public string DeveloperID { get; private set; }
         public string SecurityKey { get; private set; }
         public TimetableClientHasher Hasher { get; private set; }
+        public CompressionType CompressType { get; private set; }
 
         private string ApplySignature(string pathAndQuery)
         {
@@ -74,7 +78,31 @@ namespace Ptv.Timetable
 
         private HttpClient GetHttpClient()
         {
-            var client = new HttpClient();
+            HttpClientHandler handler = new HttpClientHandler()
+            {
+                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+            };
+
+            var client = new HttpClient(handler);
+            
+            switch(CompressType)
+            {
+                case CompressionType.GZip:
+                {
+                    client.DefaultRequestHeaders.AcceptEncoding.Add(StringWithQualityHeaderValue.Parse("gzip"));
+                    break;
+                }
+                case CompressionType.Deflate:
+                {
+                    client.DefaultRequestHeaders.AcceptEncoding.Add(StringWithQualityHeaderValue.Parse("deflate"));
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
+
             client.BaseAddress = new Uri(TimetableClient.BaseUrl);
             return client;
         }
