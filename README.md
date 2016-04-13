@@ -8,6 +8,7 @@ Status
 
 Mono (Travis CI):[![Build Status](https://travis-ci.org/huming2207/Ptv.Net.svg?branch=master)](https://travis-ci.org/huming2207/Ptv.Net)
 
+Microsoft offical toolchain (AppVeyor): [![Build status](https://ci.appveyor.com/api/projects/status/hee4cw8oxdjtgpql/branch/master?svg=true)](https://ci.appveyor.com/project/huming2207/ptv-net/branch/master)
 
 Introduction
 -----
