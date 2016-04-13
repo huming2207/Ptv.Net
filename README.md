@@ -1,11 +1,11 @@
 .NET Portable Class Library for Public Transport Victoria API (Ptv.dll)
 =======================================================================
 
-Status: [![Build Status](https://travis-ci.org/huming2207/ptv.svg?branch=master)](https://travis-ci.org/huming2207/ptv)
+Status: [![Build Status](https://travis-ci.org/huming2207/Ptv.Net.svg?branch=master)](https://travis-ci.org/huming2207/Ptv.Net)
 
 Ptv is a Portable Class Library which provides .NET-based wrapper around the Public Transport Victoria APIs that have been published at http://data.vic.gov.au.
 
-**Originally written by Readify staff. I've forked from them and add some supports for newest API v2.1.0.**
+**Originally written by former Readify staff. I've forked from them and add some supports for newest API v2.1.0.**
 
 Usage
 -----
