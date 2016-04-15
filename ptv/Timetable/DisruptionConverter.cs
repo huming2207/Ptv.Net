@@ -29,45 +29,31 @@ namespace Ptv.Timetable
 
             if (disruptionWrapper.Property("metro-train") != null)
             {
-                var disruptionMessage = disruptionWrapper["metro-train"];
-                var result = disruptionMessage.ToObject<Disruption[]>();
-                return result;
+                return seperateResult("metro-train", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("metro-bus") != null)
             {
-                var disruptionMessage = disruptionWrapper["metro-bus"];
-                var result = disruptionMessage.ToObject<Disruption[]>();
-                return result;
+                return seperateResult("metro-bus", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("metro-tram") != null)
             {
-                var disruptionMessage = disruptionWrapper["metro-tram"];
-                var result = disruptionMessage.ToObject<Disruption[]>();
-                return result;
+                return seperateResult("metro-tram", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("regional-train") != null)
             {
-                var disruptionMessage = disruptionWrapper["regional-train"];
-                var result = disruptionMessage.ToObject<Disruption[]>();
-                return result;
+                return seperateResult("regional-train", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("regional-bus") != null)
             {
-                var disruptionMessage = disruptionWrapper["regional-bus"];
-                var result = disruptionMessage.ToObject<Disruption[]>();
-                return result;
+                return seperateResult("metro-bus", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("regional-coach") != null)
             {
-                var disruptionMessage = disruptionWrapper["regional-coach"];
-                var result = disruptionMessage.ToObject<Disruption[]>();
-                return result;
+                return seperateResult("metro-coach", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("general") != null)
             {
-                var disruptionMessage = disruptionWrapper["general"];
-                var result = disruptionMessage.ToObject<Disruption[]>();
-                return result;
+                return seperateResult("general", disruptionWrapper);
             }
             else
             {
@@ -82,5 +68,13 @@ namespace Ptv.Timetable
         {
             throw new NotImplementedException();
         }
+
+        private object seperateResult(string jsonPropertyName, JObject disruptionWrapper)
+        {
+            var disruptionMessage = disruptionWrapper[jsonPropertyName];
+            Disruption[] result = disruptionMessage.ToObject<Disruption[]>();
+            return result;
+        }
+
     }
 }

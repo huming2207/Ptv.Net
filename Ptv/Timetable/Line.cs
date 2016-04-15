@@ -13,6 +13,9 @@ namespace Ptv.Timetable
         [JsonProperty(PropertyName = "transport_type")]
         public TransportType TransportType { get; set; }
 
+        [JsonProperty(PropertyName = "route_type")]
+        public RouteType RouteType { get; set; }
+
         [JsonProperty(PropertyName = "line_id")]
         public string LineID { get; set; }
 
@@ -21,5 +24,8 @@ namespace Ptv.Timetable
 
         [JsonProperty(PropertyName = "line_number")]
         public string LineNumber { get; set; }
+
+        [JsonProperty(PropertyName = "line_number_long")]
+        public string LongLineNumber { get; set; }
     }
 }

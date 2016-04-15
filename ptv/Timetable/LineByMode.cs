@@ -12,7 +12,7 @@ namespace Ptv.Timetable
     {
         [JsonProperty(PropertyName = "transport_type")]
         public TransportType TransportType { get; set; }
-
+         
         [JsonProperty(PropertyName = "line_id")]
         public string LineID { get; set; }
 

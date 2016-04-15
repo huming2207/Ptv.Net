@@ -27,6 +27,12 @@ namespace Ptv.Timetable
 
         [JsonProperty(PropertyName = "publishedOn")]
         public DateTime PublishTime { get; set; }
+
+        [JsonProperty(PropertyName = "lines")]
+        public LineArray Lines { get; set; }
+
+        [JsonProperty(PropertyName = "direction")]
+        public Direction Direction { get; set; }
     }
 
     // Something strange here that PTV themselves may forget to mention two Json Properties in their offical documentation.
