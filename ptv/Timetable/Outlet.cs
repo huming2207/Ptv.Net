@@ -13,6 +13,9 @@ namespace Ptv.Timetable
         [JsonProperty(PropertyName = "outlet_type")]
         public OutletType Type { get; set; }
 
+        [JsonProperty(PropertyName = "route_type")]
+        public RouteType RouteType { get; set; }
+
         [JsonProperty(PropertyName = "business_name")]
         public string BusinessName { get; set; }
     }
