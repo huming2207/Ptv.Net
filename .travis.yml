@@ -1,2 +1,4 @@
 language: csharp
 solution: Ptv-CITest.sln
+notifications:
+  email: false
