@@ -10,15 +10,10 @@ namespace Ptv.Timetable
     [JsonObject()]
     public class Stop : Location
     {
-        [JsonProperty(PropertyName = "route_type")]
-        public RouteType RouteType { get; set; }
-
         [JsonProperty(PropertyName = "transport_type")]
         public TransportType TransportType { get; set; }
 
-
         [JsonProperty(PropertyName = "stop_id")]
         public string StopID { get; set; }
-
     }
 }

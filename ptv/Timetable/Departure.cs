@@ -25,8 +25,5 @@ namespace Ptv.Timetable
         [JsonProperty(PropertyName = "flags")]
         [JsonConverter(typeof(DepartureFlagsConverter))]
         public DepartureFlags Flags { get; set; }
-
-        [JsonProperty(PropertyName = "disruptions")]
-        public DisruptionArray Disruptions { get; set; }
     }
 }
