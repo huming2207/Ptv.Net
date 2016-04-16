@@ -11,7 +11,7 @@ namespace Ptv.Timetable
         Tram = 1,
         Bus = 2,
         Vline = 3,
-        NightBus = 4,
+        NightRider = 4,
         TicketOutlet = 100
     }
 }
