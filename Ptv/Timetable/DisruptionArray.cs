@@ -26,7 +26,7 @@ namespace Ptv.Timetable
         public string Status { get; set; }
 
         [JsonProperty(PropertyName = "publishedOn")]
-        public DateTime PublishTime { get; set; }
+        public DateTime? PublishTime { get; set; }
 
         [JsonProperty(PropertyName = "lines")]
         public LineArray Lines { get; set; }
@@ -35,9 +35,9 @@ namespace Ptv.Timetable
         public Direction Direction { get; set; }
 
         [JsonProperty(PropertyName = "fromDate")]
-        public DateTime StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
 
-        [JsonProperty(PropertyName = "toDate")]
-        public DateTime EndTime { get; set; }
+        [JsonProperty(PropertyName = "toDate", NullValueHandling = NullValueHandling.Include)]
+        public DateTime? EndTime { get; set; }
     }
 }

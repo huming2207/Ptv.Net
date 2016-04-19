@@ -17,7 +17,7 @@ namespace Ptv.Timetable
         public Run Run { get; set; }
 
         [JsonProperty(PropertyName = "time_timetable_utc")]
-        public DateTime ScheduledTime { get; set; }
+        public DateTime? ScheduledTime { get; set; }
 
         [JsonProperty(PropertyName = "time_realtime_utc")]
         public DateTime? EstimatedTime { get; set; }

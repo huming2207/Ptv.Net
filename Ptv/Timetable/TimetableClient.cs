@@ -25,6 +25,7 @@ namespace Ptv.Timetable
         private const string GetStoppingPatternPathAndQueryFormat = "/v2/mode/{0}/run/{1}/stop/{2}/stopping-pattern?for_utc={3}&";
         private const string GetLineStopsPathAndQueryFormat = "/v2/mode/{0}/line/{1}/stops-for-line?";
         private const string GetDistruptionAndQueryFormat = "/v2/disruptions/modes/{0}?";
+        private const string GetStopFacilitiesAndQueryFormat = "/v2/stops/?stop_id={0}&route_type={1}&location={2}&amenity={3}&accessibility={4}&";
         private const string DeveloperIDFormat = "{0}devid={1}";
         private const string SignatureFormat = "{0}&signature={1}";
         

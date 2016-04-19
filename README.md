@@ -4,7 +4,7 @@
 Status
 -----
 
-**Now I'm going to add version 2.2 support. It may takes one or two weeks.**
+**Now I'm going to add version 2.2 support. It may takes one or two weeks to finish.**
 
 Mono (Travis CI):[![Build Status](https://travis-ci.org/huming2207/Ptv.Net.svg?branch=master)](https://travis-ci.org/huming2207/Ptv.Net)
 
@@ -20,7 +20,7 @@ Ptv is a Portable Class Library which provides .NET-based wrapper around the Pub
 Usage
 -----
 
-Firstly, open **Ptv.sln** (NOT THE ONE CALLED **Ptv-TravisTest.sln**) to compile the PCL library, 
+Firstly, open **Ptv.sln** (NOT THE ONE CALLED **Ptv-CITest.sln**) to compile the PCL library, 
 or have a try with the WPF demo app.
 
 Then, in your code add the following:

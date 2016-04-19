@@ -42,6 +42,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Timetable\Accessibility.cs" />
+    <Compile Include="Timetable\Amenity.cs" />
     <Compile Include="Timetable\CompressionType.cs" />
     <Compile Include="Timetable\DepartureFlags.cs" />
     <Compile Include="Timetable\DepartureFlagsConverter.cs" />
@@ -50,11 +52,14 @@
     <Compile Include="Timetable\Disruption.cs" />
     <Compile Include="Timetable\DisruptionArray.cs" />
     <Compile Include="Timetable\DisruptionConverter.cs" />
+    <Compile Include="Timetable\Gps.cs" />
     <Compile Include="Timetable\Health.cs" />
     <Compile Include="Timetable\LineArray.cs" />
     <Compile Include="Timetable\LineByMode.cs" />
     <Compile Include="Timetable\LineByModeConverter.cs" />
     <Compile Include="Timetable\RouteType.cs" />
+    <Compile Include="Timetable\StopFacilities.cs" />
+    <Compile Include="Timetable\StopFacilitiesConverter.cs" />
     <Compile Include="Timetable\TimetableClientHasher.cs" />
     <Compile Include="Timetable\Item.cs" />
     <Compile Include="Timetable\LocationConverter.cs" />
@@ -73,6 +78,7 @@
     <Compile Include="Timetable\TimetableException.cs" />
     <Compile Include="Timetable\TransportType.cs" />
     <Compile Include="Timetable\DepartureConverter.cs" />
+    <Compile Include="Timetable\Wheelchair.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
