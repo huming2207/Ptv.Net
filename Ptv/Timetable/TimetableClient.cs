@@ -236,5 +236,18 @@ namespace Ptv.Timetable
             var result = await this.ExecuteAsync<Disruption[]>(pathAndQuery);
             return result;
         }
+
+        public async Task<StopFacilities> GetStopFacilitiesAsync(string stopID, RouteType routeType, bool getLocation = true, bool getAmenity = true, bool getAccessibility = true)
+        {
+            var pathAndQuery = string.Format(TimetableClient.GetStopFacilitiesAndQueryFormat,
+                    stopID,
+                    (uint)routeType,
+                    Convert.ToInt32(getLocation),
+                    Convert.ToInt32(getAmenity),
+                    Convert.ToInt32(getAccessibility)
+                    );
+            var result = await this.ExecuteAsync<StopFacilities>(pathAndQuery);
+            return result;
+        }
     }
 }

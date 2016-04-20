@@ -22,5 +22,8 @@ namespace Ptv.Timetable
 
         [JsonProperty(PropertyName = "tactile_tiles")]
         public bool HasTactileTiles { get; set; }
+
+        [JsonProperty(PropertyName = "wheelchair")]
+        public Wheelchair Wheelchair { get; set; }
     }
 }

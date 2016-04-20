@@ -45,6 +45,22 @@
                     </ComboBox>
                 </Grid>
             </TabItem>
+            <TabItem Header="Stop Facilities">
+                <Grid Background="#FFFFFFFF" Margin="0,0,0,-1">
+                    <Label x:Name="searchLabel" Content="Enter a Stop ID:" HorizontalAlignment="Left" Margin="162,38,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="26" Margin="275,38,0,0" TextWrapping="Wrap" Text="1071" VerticalAlignment="Top" Width="127" FontSize="16"/>
+                    <Button x:Name="button" Content="Search it!" HorizontalAlignment="Left" Height="26" Margin="420,38,0,0" VerticalAlignment="Top" Width="90"/>
+                    <CheckBox x:Name="checkBox" Content="" HorizontalAlignment="Left" Height="18" Margin="82,368,0,0" VerticalAlignment="Top" Width="110"/>
+                    <Label x:Name="stopTypeLabel" Content="Type of this stop:" HorizontalAlignment="Left" Margin="82,110,0,0" VerticalAlignment="Top" Width="110"/>
+                    <Label x:Name="stopTypeResultLabel" Content="N/A" HorizontalAlignment="Left" Margin="197,110,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
+                    <Label x:Name="descriptionLabel" Content="Stop Description:" HorizontalAlignment="Left" Margin="82,141,0,0" VerticalAlignment="Top" Width="110"/>
+                    <Label x:Name="stopTypeLabel_Copy" Content="Stop suburb:" HorizontalAlignment="Left" Margin="82,240,0,0" VerticalAlignment="Top" Width="93"/>
+                    <Label x:Name="stopTypeResultLabel_Copy" Content="N/A" HorizontalAlignment="Left" Margin="180,240,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold"/>
+                    <Label x:Name="stopTypeLabel_Copy1" Content="Post Code:" HorizontalAlignment="Left" Margin="343,240,0,0" VerticalAlignment="Top" Width="83"/>
+                    <Label x:Name="stopTypeResultLabel_Copy1" Content="N/A" HorizontalAlignment="Left" Margin="440,240,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
+                    <TextBlock x:Name="descriptionResultTextBlock" HorizontalAlignment="Left" Height="87" Margin="204,148,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="466"/>
+                </Grid>
+            </TabItem>
             <TabItem Header="Stop on a line">
                 <Grid Background="#FFFFFFFF"/>
             </TabItem>

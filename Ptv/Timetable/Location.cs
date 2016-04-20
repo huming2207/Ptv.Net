@@ -23,29 +23,5 @@ namespace Ptv.Timetable
 
         [JsonProperty(PropertyName = "distance")]
         public double Distance { get; set; }
-
-        [JsonProperty(PropertyName = "gps", NullValueHandling = NullValueHandling.Include)]
-        private Gps _GpsInfo;
-        public Gps GPSInfo
-        {
-            get
-            {
-                if(_GpsInfo == null)
-                {
-                    Gps gps = new Gps();
-                    gps.Latitude = 0d;
-                    gps.Longitude = 0d;
-                    return gps;
-                }
-                else
-                {
-                    return _GpsInfo;
-                }
-            }
-            set
-            {
-                _GpsInfo = value;
-            }
-        }
     }
 }

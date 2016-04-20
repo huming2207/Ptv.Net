@@ -24,15 +24,12 @@ namespace Ptv.Timetable
         public string StopTypeDescryption { get; set; }
 
         [JsonProperty(PropertyName = "location")]
-        public Location Location { get; set; }
+        public StopFacilitiesLocation StopLocation { get; set; }
 
         [JsonProperty(PropertyName = "amenity")]
         public Amenity Amenity { get; set; }
 
         [JsonProperty(PropertyName = "accessibility")]
         public Accessibility Accessibility { get; set; }
-
-        [JsonProperty(PropertyName = "wheelchair")]
-        public Wheelchair Wheelchair { get; set; }
     }
 }

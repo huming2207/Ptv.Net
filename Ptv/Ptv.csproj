@@ -60,6 +60,7 @@
     <Compile Include="Timetable\RouteType.cs" />
     <Compile Include="Timetable\StopFacilities.cs" />
     <Compile Include="Timetable\StopFacilitiesConverter.cs" />
+    <Compile Include="Timetable\StopFacilitiesLocation.cs" />
     <Compile Include="Timetable\TimetableClientHasher.cs" />
     <Compile Include="Timetable\Item.cs" />
     <Compile Include="Timetable\LocationConverter.cs" />

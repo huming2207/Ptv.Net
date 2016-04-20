@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ptv.Timetable
 {
-    public enum RouteType
+    public enum RouteType : uint
     {
         Train = 0,
         Tram = 1,
