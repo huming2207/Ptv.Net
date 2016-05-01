@@ -4,24 +4,25 @@
 Status
 -----
 
-**Now I'm going to add version 2.2 support. It may takes one or two weeks to finish.**
+**Now I'm going to add version 2.2 support. It may takes one or two weeks to finish.** 
+**Partially added v2.2 support, still have some left.**
 
-Mono (Travis CI):[![Build Status](https://travis-ci.org/huming2207/Ptv.Net.svg?branch=master)](https://travis-ci.org/huming2207/Ptv.Net)
+Mono (Travis CI): [![Build Status](https://travis-ci.org/huming2207/Ptv.Net.svg?branch=master)](https://travis-ci.org/huming2207/Ptv.Net)
 
 Microsoft offical toolchain (AppVeyor): [![Build status](https://ci.appveyor.com/api/projects/status/hee4cw8oxdjtgpql/branch/master?svg=true)](https://ci.appveyor.com/project/huming2207/ptv-net/branch/master)
 
 Introduction
 -----
 
-Ptv is a Portable Class Library which provides .NET-based wrapper around the Public Transport Victoria APIs that have been published at http://data.vic.gov.au.
+Ptv.Net is a Portable Class Library which provides .NET-based wrapper around the Public Transport Victoria APIs that have been published at http://data.vic.gov.au.
 
-**Originally written by former Readify staff. I've forked from them and add some supports for newest API v2.1.0.**
+**Originally written by former Readify staff. I've forked from them and add some supports for newest API v2.1.0 and v2.2.0.**
 
 Usage
 -----
 
-Firstly, open **Ptv.sln** (NOT THE ONE CALLED **Ptv-CITest.sln**) to compile the PCL library, 
-or have a try with the WPF demo app.
+Firstly, open **Ptv.sln** (NOT THE ONE CALLED **Ptv-CITest.sln**) to compile it, 
+or it can also be downloaded though NuGet: https://www.nuget.org/packages/Ptv.Net
 
 Then, in your code add the following:
 
