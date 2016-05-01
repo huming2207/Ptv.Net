@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>Ptv.Net</id>
+        <version>1.1.2.2</version>
+        <title>Ptv.NET</title>
+        <authors>Ming Hu</authors>
+        <owners>Ming Hu</owners>
+        <projectUrl>https://github.com/huming2207/Ptv.Net</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>This is a library for parsing public transport services realtime API in Melbourne, Victoria, Australia.
+
+Originally written by former Readify staff. I've forked from them and add some supports for newest API v2.1.0 and v2.2.0</description>
+        <summary>This is a library for parsing public transport services realtime API in Melbourne, Victoria, Australia.</summary>
+        <releaseNotes>- Add partial API v2.2.0 support</releaseNotes>
+        <dependencies>
+            <group targetFramework="Newtonsoft.Json0.0">
+                <dependency id="Newtonsoft.Json" version="8.0.3" />
+                <dependency id="Microsoft.Bcl" version="1.1.10" />
+                <dependency id="Microsoft.Bcl.Build" version="1.0.21" />
+                <dependency id="Microsoft.Net.Http" version="2.2.29" />
+            </group>
+        </dependencies>
+        <frameworkAssemblies>
+            <frameworkAssembly assemblyName="WindowsBase" targetFramework="" />
+        </frameworkAssemblies>
+    </metadata>
+    <files>
+        <file src="..\Ptv\bin\Release\Ptv.dll" target="lib\Ptv.dll" />
+        <file src="..\Ptv\bin\Release\Ptv.dll.config" target="lib\Ptv.dll.config" />
+    </files>
+</package>

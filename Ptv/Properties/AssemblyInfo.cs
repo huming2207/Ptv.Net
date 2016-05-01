@@ -9,8 +9,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle(".NET Portable Class Library for Public Transport Victoria API")]
 [assembly: AssemblyDescription("This is a .NET PCL which implements the API published by Public Transport Victoria.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Readify")]
-[assembly: AssemblyProduct("Ptv")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Ptv.Net")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -26,5 +26,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.0")]
-[assembly: AssemblyFileVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.1.2.2")]
+[assembly: AssemblyFileVersion("1.1.2.2")]

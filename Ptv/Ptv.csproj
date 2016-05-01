@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ptv</RootNamespace>
-    <AssemblyName>Ptv</AssemblyName>
+    <AssemblyName>Ptv.Net</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -59,7 +59,6 @@
     <Compile Include="Timetable\LineByModeConverter.cs" />
     <Compile Include="Timetable\RouteType.cs" />
     <Compile Include="Timetable\StopFacilities.cs" />
-    <Compile Include="Timetable\StopFacilitiesConverter.cs" />
     <Compile Include="Timetable\StopFacilitiesLocation.cs" />
     <Compile Include="Timetable\TimetableClientHasher.cs" />
     <Compile Include="Timetable\Item.cs" />
