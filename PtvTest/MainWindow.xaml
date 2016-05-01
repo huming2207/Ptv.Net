@@ -48,26 +48,26 @@
             <TabItem Header="Stop Facilities">
                 <Grid Background="#FFFFFFFF" Margin="0,0,0,-1">
                     <Label x:Name="searchLabel" Content="Enter a Stop ID:" HorizontalAlignment="Left" Margin="162,38,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="26" Margin="275,38,0,0" TextWrapping="Wrap" Text="1071" VerticalAlignment="Top" Width="127" FontSize="16"/>
-                    <Button x:Name="button" Content="Search it!" HorizontalAlignment="Left" Height="26" Margin="420,38,0,0" VerticalAlignment="Top" Width="90"/>
+                    <TextBox x:Name="stopFacilitiesSearchTextBox" HorizontalAlignment="Left" Height="26" Margin="275,38,0,0" TextWrapping="Wrap" Text="1071" VerticalAlignment="Top" Width="127" FontSize="16"/>
+                    <Button x:Name="stopFacilitiesQueryButton" Content="Search it!" HorizontalAlignment="Left" Height="26" Margin="162,69,0,0" VerticalAlignment="Top" Width="382" Click="stopFacilitiesQueryButton_Click"/>
                     <Label x:Name="stopTypeLabel" Content="Type of this stop:" HorizontalAlignment="Left" Margin="82,110,0,0" VerticalAlignment="Top" Width="110"/>
-                    <Label x:Name="stopTypeResultLabel" Content="N/A" HorizontalAlignment="Left" Margin="197,110,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
+                    <Label x:Name="stopFacilitiesTypeResultLabel" Content="N/A" HorizontalAlignment="Left" Margin="197,110,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
                     <Label x:Name="descriptionLabel" Content="Stop Description:" HorizontalAlignment="Left" Margin="82,141,0,0" VerticalAlignment="Top" Width="110"/>
                     <Label x:Name="stopSurburbLabel" Content="Stop suburb:" HorizontalAlignment="Left" Margin="82,240,0,0" VerticalAlignment="Top" Width="93"/>
-                    <Label x:Name="stopSuburbResult" Content="N/A" HorizontalAlignment="Left" Margin="162,240,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold"/>
+                    <Label x:Name="stopFacilitiesSuburbResult" Content="N/A" HorizontalAlignment="Left" Margin="162,240,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold"/>
                     <Label x:Name="stopPostCodeLabel" Content="Post Code:" HorizontalAlignment="Left" Margin="472,240,0,0" VerticalAlignment="Top" Width="83"/>
-                    <Label x:Name="stopPostCodeResult" Content="N/A" HorizontalAlignment="Left" Margin="560,240,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
-                    <TextBox x:Name="stopDescriptionTextBox" HorizontalAlignment="Left" Height="90" Margin="197,145,0,0" TextWrapping="Wrap" Text="Don't know yet..." VerticalAlignment="Top" Width="473"/>
+                    <Label x:Name="stopFacilitiesPostCodeResult" Content="N/A" HorizontalAlignment="Left" Margin="560,240,0,0" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
+                    <TextBox x:Name="stopFacilitiesDescriptionTextBox" HorizontalAlignment="Left" Height="90" Margin="197,145,0,0" TextWrapping="Wrap" Text="Don't know yet..." VerticalAlignment="Top" Width="473"/>
                     <Label x:Name="stopNameLabel" Content="Stop name:" HorizontalAlignment="Left" Margin="82,266,0,0" VerticalAlignment="Top" Width="93"/>
-                    <Label x:Name="stopNameResult" Content="N/A" HorizontalAlignment="Left" Margin="162,266,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold"/>
+                    <Label x:Name="stopFacilitiesNameResult" Content="N/A" HorizontalAlignment="Left" Margin="162,266,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold"/>
                     <Label x:Name="stopLocationLabel" Content="Stop location:" HorizontalAlignment="Left" Margin="82,292,0,0" VerticalAlignment="Top" Width="93"/>
-                    <Label x:Name="stopLocationResult" Content="N/A" HorizontalAlignment="Left" Margin="162,292,0,0" VerticalAlignment="Top" Width="149" FontWeight="Bold"/>
+                    <Label x:Name="stopFacilitiesLocationResult" Content="N/A" HorizontalAlignment="Left" Margin="162,292,0,0" VerticalAlignment="Top" Width="420" FontWeight="Bold"/>
                     <GroupBox x:Name="stopAmenityGroupBox" Header="Amenity" HorizontalAlignment="Left" Height="157" Margin="88,323,0,0" VerticalAlignment="Top" Width="166">
-                        <StackPanel HorizontalAlignment="Left" Height="132" Margin="2,2,0,0" VerticalAlignment="Top" Width="100">
+                        <StackPanel HorizontalAlignment="Left" Height="132" Margin="2,2,-2,0" VerticalAlignment="Top" Width="154">
                             <CheckBox x:Name="amenityToiletCheckBox" Content="Toilet" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <CheckBox x:Name="amenityTaxiCheckBox" Content="Taxi" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
-                            <CheckBox x:Name="amenityCarParkCheckBox" Content="Car Parking" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                             <CheckBox x:Name="amenityCctvCheckBox" Content="CCTV" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="amenityCarParkLabel" Content="Car Park Amount:" Margin="7,2,10,0"/>
                         </StackPanel>
                     </GroupBox>
 
@@ -85,6 +85,10 @@
                             <CheckBox x:Name="accessibilityAccessibleToiletCheckBox" Content="Accessible Toilets" HorizontalAlignment="Left" Margin="120,-15,0,0" VerticalAlignment="Top"/>
                         </StackPanel>
                     </GroupBox>
+                    <ComboBox x:Name="stopFacilitiesRouteTypeComboBox" HorizontalAlignment="Left" Margin="407,38,0,0" VerticalAlignment="Top" Width="137" Height="26">
+                        <ComboBoxItem Content="Train" HorizontalAlignment="Left" Width="118"/>
+                        <ComboBoxItem Content="VLine" HorizontalAlignment="Left" Width="118"/>
+                    </ComboBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Stop on a line">

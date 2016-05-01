@@ -31,11 +31,8 @@ namespace PtvTest
             InitializeComponent();
         }
 
-        private async void loginButton_Click(object sender, RoutedEventArgs e)
+        private TimetableClient TimetableClientToken()
         {
-            ApiKey = apiKeyTextBox.Text;
-            ApiId = apiIdTextBox.Text;
-
             var client = new TimetableClient(
                 ApiId,
                 ApiKey,
@@ -52,6 +49,16 @@ namespace PtvTest
                 }
             );
 
+            return client;
+        }
+
+
+        private async void loginButton_Click(object sender, RoutedEventArgs e)
+        {
+            ApiKey = apiKeyTextBox.Text;
+            ApiId = apiIdTextBox.Text;
+
+            var client = TimetableClientToken();
             var checkHealthResult = await client.GetHealthAsync();
 
             serverDatabaseCheckResultTextBlock.Text = "Server Database Check: " + checkHealthResult.IsClientClockOK.ToString();
@@ -71,16 +78,7 @@ namespace PtvTest
 
         private async void getDisruptionButton_Click(object sender, RoutedEventArgs e)
         {
-            var client = new TimetableClient(
-                 ApiId,
-                 ApiKey,
-                (input, key) =>
-                {
-                    var provider = new HMACSHA1(key);
-                    var hash = provider.ComputeHash(input);
-                    return hash;
-                }
-            );
+            var client = TimetableClientToken();
 
             // ComboBox in WPF is different from WinForm, so we need to use it in this way,
             // NOT simply using "ComboBox.SelectedItem.ToString()"
@@ -99,18 +97,8 @@ namespace PtvTest
 
         private async void searchButton_Click(object sender, RoutedEventArgs e)
         {
- 
-            var client = new TimetableClient(
-                ApiId,
-                ApiKey,
-                (input, key) =>
-            {
-                var provider = new HMACSHA1(key);
-                var hash = provider.ComputeHash(input);
-                return hash;
-            }
-            );
 
+            var client = TimetableClientToken();
             var itemResult = await client.SearchAsync(searchTextBox.Text);
 
             for (int i = 0; i < itemResult.Length; i++)
@@ -139,17 +127,7 @@ namespace PtvTest
 
         private async void searchLineByModeButton_Click(object sender, RoutedEventArgs e)
         {
-            var client = new TimetableClient(
-                ApiId,
-                ApiKey,
-                (input, key) =>
-                {
-                    var provider = new HMACSHA1(key);
-                    var hash = provider.ComputeHash(input);
-                    return hash;
-                }
-            );
-
+            var client = TimetableClientToken();
             var itemResult = await client.SearchLineByModeAsync(searchLineByModeTextBox.Text, (TransportType)searchLineByModeResultComboBox.SelectedIndex);
 
             for (int i = 0; i < itemResult.Length; i++)
@@ -159,6 +137,39 @@ namespace PtvTest
                 searchLineByModeResultTextBox.AppendText("\r\nLine Number: " + itemResult[i].LineNumber);
                 searchLineByModeResultTextBox.AppendText("\r\nType: " + itemResult[i].TransportType);
             }
+        }
+
+        private async void stopFacilitiesQueryButton_Click(object sender, RoutedEventArgs e)
+        {
+            var client = TimetableClientToken();
+            ComboBoxItem selectedRouteTypeItem = (ComboBoxItem)stopFacilitiesRouteTypeComboBox.SelectedItem;
+            string selectedRouteTypeString = selectedRouteTypeItem.Content.ToString();
+            var itemResult = await client.GetStopFacilitiesAsync(
+                stopFacilitiesSearchTextBox.Text,
+                (RouteType)Enum.Parse((typeof(RouteType)), selectedRouteTypeString, true)
+            );
+
+
+            // Should be refined or rewritten below...
+            stopFacilitiesTypeResultLabel.Content = itemResult.StopType;
+            stopFacilitiesDescriptionTextBox.Text = itemResult.StopTypeDescryption;
+            stopFacilitiesNameResult.Content = itemResult.StopLocation.PrimaryStopName + "@" + itemResult.StopLocation.SecondaryStopName;
+            stopFacilitiesPostCodeResult.Content = itemResult.StopLocation.PostCode;
+            stopFacilitiesLocationResult.Content = "Lon: " + itemResult.StopLocation.GPSInfo.Longitude + "  Lat: " + itemResult.StopLocation.GPSInfo.Latitude;
+            amenityCarParkLabel.Content = "Car Park Amount: " + itemResult.Amenity.CarParkAmount.ToString();
+            amenityCctvCheckBox.IsChecked = itemResult.Amenity.HasCctv;
+            amenityTaxiCheckBox.IsChecked = itemResult.Amenity.HasTaxiRank;
+            amenityToiletCheckBox.IsChecked = itemResult.Amenity.HasToilet;
+            accessibilityAccessbileRampCheckBox.IsChecked = itemResult.Accessibility.Wheelchair.HasAccessableRamp;
+            accessibilityAccessibleParkingCheckBox.IsChecked = itemResult.Accessibility.Wheelchair.HasAccessibleParking;
+            accessibilityAccessiblePhoneCheckBox.IsChecked = itemResult.Accessibility.Wheelchair.HasAccessiblePhone;
+            accessibilityAccessibleToiletCheckBox.IsChecked = itemResult.Accessibility.Wheelchair.HasAccessibleToilet;
+            accessibilityEscalatorCheckBox.IsChecked = itemResult.Accessibility.HasEscalator;
+            accessibilityHearingLoopCheckBox.IsChecked = itemResult.Accessibility.HasHearingLoop;
+            accessibilityLiftsCheckBox.IsChecked = itemResult.Accessibility.HasLifts;
+            accessibilityLightingCheckBox.IsChecked = itemResult.Accessibility.HasLighting;
+            accessibilityStairCheckBox.IsChecked = itemResult.Accessibility.HasStairs;
+            accessibilityTactileTilesCheckBox.IsChecked = itemResult.Accessibility.HasTactileTiles;
         }
     }
 }
