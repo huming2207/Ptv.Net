@@ -11,12 +11,20 @@ Mono (Travis CI): [![Build Status](https://travis-ci.org/huming2207/Ptv.Net.svg?
 
 Microsoft offical toolchain (AppVeyor): [![Build status](https://ci.appveyor.com/api/projects/status/hee4cw8oxdjtgpql/branch/master?svg=true)](https://ci.appveyor.com/project/huming2207/ptv-net/branch/master)
 
+Licence
+-----
+
+Apache Licence Version 2.0
+
+**Originally written by former Readify staff. I've forked from them and add some supports for newest API v2.1.0 and v2.2.0.**
+
+Original Readify library is here: https://github.com/Readify/ptv
+
 Introduction
 -----
 
 Ptv.Net is a Portable Class Library which provides .NET-based wrapper around the Public Transport Victoria APIs that have been published at http://data.vic.gov.au.
 
-**Originally written by former Readify staff. I've forked from them and add some supports for newest API v2.1.0 and v2.2.0.**
 
 Usage
 -----
@@ -47,3 +55,5 @@ var client = new TimetableClient(
 
 var results = await client.SearchAsync("South Melbourne");
 ```
+
+
