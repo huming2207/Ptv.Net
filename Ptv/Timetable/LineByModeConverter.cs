@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ptv.Timetable;
-using Ptv.Properties;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

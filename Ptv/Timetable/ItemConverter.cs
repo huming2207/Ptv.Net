@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Ptv.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +39,7 @@ namespace Ptv.Timetable
                     return line;
 
                 default:
-                    throw new TimetableException(Resources.UnexpectedResponseFromServerDetectedTimetableExceptionMessage)
+                    throw new TimetableException()
                     {
                         Json = resultWrapper.ToString()
                     };

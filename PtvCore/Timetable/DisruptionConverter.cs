@@ -29,31 +29,31 @@ namespace PtvCore.Timetable
 
             if (disruptionWrapper.Property("metro-train") != null)
             {
-                return seperateResult("metro-train", disruptionWrapper);
+                return SeperateResult("metro-train", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("metro-bus") != null)
             {
-                return seperateResult("metro-bus", disruptionWrapper);
+                return SeperateResult("metro-bus", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("metro-tram") != null)
             {
-                return seperateResult("metro-tram", disruptionWrapper);
+                return SeperateResult("metro-tram", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("regional-train") != null)
             {
-                return seperateResult("regional-train", disruptionWrapper);
+                return SeperateResult("regional-train", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("regional-bus") != null)
             {
-                return seperateResult("metro-bus", disruptionWrapper);
+                return SeperateResult("metro-bus", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("regional-coach") != null)
             {
-                return seperateResult("metro-coach", disruptionWrapper);
+                return SeperateResult("metro-coach", disruptionWrapper);
             }
             else if (disruptionWrapper.Property("general") != null)
             {
-                return seperateResult("general", disruptionWrapper);
+                return SeperateResult("general", disruptionWrapper);
             }
             else
             {
@@ -69,7 +69,7 @@ namespace PtvCore.Timetable
             throw new NotImplementedException();
         }
 
-        private object seperateResult(string jsonPropertyName, JObject disruptionWrapper)
+        private object SeperateResult(string jsonPropertyName, JObject disruptionWrapper)
         {
             var disruptionMessage = disruptionWrapper[jsonPropertyName];
             Disruption[] result = disruptionMessage.ToObject<Disruption[]>();
