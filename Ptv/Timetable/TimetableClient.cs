@@ -14,7 +14,7 @@ namespace Ptv.Timetable
 {
     public class TimetableClient
     {
-        private const string BaseUrl = "http://timetableapi.ptv.vic.gov.au";
+        private const string BaseUrl = "http://timetableapi.Ptv.vic.gov.au";
         private const string GetHealthPathAndQueryFormat = "/v2/healthcheck?timestamp={0}&";
         private const string GetNearbyPathAndQueryFormat = "/v2/nearme/latitude/{0}/longitude/{1}?";
         private const string GetPointsOfInterestPathAndQueryFormat = "/v2/poi/{0}/lat1/{1}/long1/{2}/lat2/{3}/long2/{4}/griddepth/{5}/limit/{6}?";

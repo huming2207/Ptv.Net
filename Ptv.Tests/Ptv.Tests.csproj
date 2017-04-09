@@ -63,12 +63,6 @@
     <Compile Include="Timetable\TimetableClientTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Ptv\Ptv.csproj">
-      <Project>{bdf370a0-1ad4-4f8d-96c7-0516894014ee}</Project>
-      <Name>Ptv</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
